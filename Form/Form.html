@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <main>
+        <h2>Feedback</h2>
+        <h3>Love something? Hate something? Let us know!</h3>
+        Note: Fields marked with an asterisk (*) are mandatory
+        <br /><br />
+        <form id="feedback-form" method="post" novalidate>
+          <label>Title*:</label>
+          <input
+            type="radio"
+            name="title"
+            value="miss"
+            required="required"
+          />Miss
+          <input type="radio" name="title" value="mr" required="required" />Mr.
+          <input
+            type="radio"
+            name="title"
+            value="mrs"
+            required="required"
+          />Mrs.
+          <span class="error" id="error-title">Please select a title</span>
+          <br /><br />
+
+          <label for="firstName">First Name*:</label>
+          <input
+            type="text"
+            name="firstName"
+            id="firstName"
+            placeholder="First Name"
+          />
+          <span class="error" id="error-firstName"
+            >Must be between 2 and 50 alphabetic characters</span
+          >
+          <br /><br />
+
+          <label for="lastName">Last Name*:</label>
+          <input
+            type="text"
+            name="lastName"
+            id="lastName"
+            placeholder="Last Name"
+          />
+          <span class="error" id="error-lastName"
+            >Must be between 2 and 50 alphabetic characters</span
+          >
+          <br /><br />
+
+          <label for="emailId">Email Id*:</label>
+          <input
+            type="text"
+            name="emailId"
+            id="emailId"
+            placeholder="abc@northeastern.edu"
+          />
+          <span class="error" id="error-emailId"
+            >Invalid Email (must be abc@northeastern.edu domain)</span
+          >
+          <br /><br />
+
+          <label for="phoneNumber">Phone Number*:</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            id="phoneNumber"
+            placeholder="xxx-xxx-xxxx or xxxxxx-xxxx"
+            size="21"
+          />
+          <span class="error" id="error-phoneNumber">Invalid Phone Number</span>
+          <br /><br />
+
+          <label for="streetAddress1">Street Address 1*:</label>
+          <input
+            type="text"
+            id="streetAddress1"
+            name="streetAddress1"
+            required
+          />
+          <span class="error" id="error-streetAddress1"
+            >This field is required</span
+          >
+          <br /><br />
+
+          <label for="streetAddress2">Street Address 2:</label>
+          <input type="text" id="streetAddress2" name="streetAddress2" />
+          <br /><br />
+
+          <label for="city">City*:</label>
+          <input type="text" id="city" name="city" required />
+          <span class="error" id="error-city">This field is required</span>
+          <br /><br />
+
+          <label for="state">State*:</label>
+          <input type="text" id="state" name="state" required />
+          <span class="error" id="error-state">This field is required</span>
+          <br /><br />
+
+          <label for="zipcode">ZipCode*:</label>
+          <input
+            type="text"
+            name="zipcode"
+            id="zipcode"
+            placeholder="xxxxx or xxxxx-xxxx"
+          />
+          <span class="error" id="error-zipcode">Invalid ZipCode</span>
+          <br /><br />
+
+          <label for="comments">Comments*:</label>
+          <textarea
+            name="text"
+            id="comments"
+            placeholder="Your comments"
+            rows="5"
+            cols="25"
+          ></textarea>
+          <span class="error" id="error-comments"
+            >Must be between 10 and 200 alphanumeric characters</span
+          >
+          <br /><br />
+
+          <label for="source">How did you hear*:</label>
+          <input type="checkbox" name="source" value="facebook" /> Facebook
+          <input type="checkbox" name="source" value="google" /> Google
+          <input type="checkbox" name="source" value="yelp" /> Yelp
+          <span class="error" id="error-source"
+            >Please select at least one option</span
+          >
+          <br /><br />
+          <label for="feedbackCategory">Feedback Category*:</label>
+          <select
+            id="feedbackCategory"
+            name="feedbackCategory"
+            onchange="handleCategoryChange()"
+          >
+            <option value="">Select a category</option>
+            <option value="Service">Service</option>
+            <option value="Product Quality">Product Quality</option>
+            <option value="Delivery">Delivery</option>
+            <option value="Website Usability">Website Usability</option>
+            <option value="Other">Other</option>
+          </select>
+          <span class="error" id="error-feedbackCategory"
+            >Please select a category</span
+          >
+          <br /><br />
+          <div id="dynamicCheckboxContainer"></div>
+          <div id="dynamicTextFieldContainer">
+            <textarea
+              id="additionalDetails"
+              name="additionalDetails"
+              placeholder="Please provide additional details..."
+              rows="4"
+              cols="50"
+              style="display: none"
+            ></textarea>
+            <span class="error" id="error-additionalDetails"
+              >Please enter between 10 and 100 characters or "N/A"</span
+            >
+          </div>
+
+          <button type="submit" id="submit" disabled>Submit</button>
+          <button type="reset">Reset</button>
+        </form>
+      </main>
+    </div>
+    <div id="submittedDataContainer"></div>
+    <script src="script.js"></script>
+  </body>
+</html>
