@@ -1,0 +1,109 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+/* Container Styling */
+.login-container,
+.calculator-container {
+  width: 350px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+/* Title */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+form,
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input {
+  padding: 8px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+input[readonly] {
+  background-color: #f9f9f9;
+}
+
+.error {
+  color: red;
+  font-size: 0.85rem;
+  display: none;
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 10px;
+  font-size: 1rem;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+#addButton {
+  background-color: #e19f8b;
+}
+
+#subtractButton {
+  background-color: #808ef3;
+}
+
+#multiplyButton {
+  background-color: #56b2e3;
+}
+
+#divideButton {
+  background-color: #ce88da;
+  margin-bottom: 15px;
+}
+button:hover {
+  opacity: 0.9;
+}
+
+#loginButton {
+  background-color: grey;
+  color: rgb(14, 14, 14);
+}
+
+#loginButton.enabled {
+  background-color: #2850d3;
+  color: white;
+}
+
+#result {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
