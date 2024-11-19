@@ -1,0 +1,64 @@
+@use "sass:math";
+@use "sass:color";
+@use "variables";
+
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem; 
+}
+
+.recipe-card {
+  padding: rem(20); 
+}
+
+// Loop to Generate classes for margins
+@mixin generate-margins($range) {
+  @for $i from 1 through $range {
+    .m-#{$i} {
+      margin: rem($i * 8);
+    }
+  }
+}
+
+@include generate-margins(5); 
+
+.header {
+  background-color: $primary-color;
+  color: white;
+
+  &:hover {
+    background-color: color.adjust(
+      $primary-color,
+      $lightness: -10%
+    ); // Darken by 10%
+  }
+}
+
+.recipe-card {
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid transparent; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: border 0.3s ease, box-shadow 0.3s ease; 
+  &:hover {
+    border: 2px solid color.adjust($primary-color, $lightness: -10%); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  }
+}
+
+// Mixin to apply styles based on device size
+@mixin responsive($device) {
+  @media (min-width: map-get($breakpoints, $device)) {
+    @content;
+  }
+}
+
+//  dynamically apply padding based on the screen size, improving responsiveness.Usage of the responsive mixin
+.container {
+  @include responsive("tablet") {
+    padding: 20px;
+  }
+
+  @include responsive("desktop") {
+    padding: 40px;
+  }
+}

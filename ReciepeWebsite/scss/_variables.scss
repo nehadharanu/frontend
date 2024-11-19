@@ -1,0 +1,16 @@
+$primary-color: #ff7f50;
+$secondary-color: #ffffff;
+$font-family: "Arial, sans-serif";
+$card-padding: 20px;
+$card-border-radius: 10px;
+// Custom Property for card color
+:root {
+  --card-bg-color: rgba(224, 234, 252, 0.9);
+}
+
+$breakpoints: (
+  "mobile": 576px,
+  "tablet": 768px,
+  "desktop": 1024px,
+  "large-desktop": 1200px,
+);

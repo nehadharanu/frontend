@@ -1,0 +1,45 @@
+//nesting
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin card-style($bg-color: var(--card-bg-color)) {
+  background-color: $bg-color;
+  padding: $card-padding;
+  border-radius: $card-border-radius;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+//  interpolation
+@mixin responsive($device) {
+  @media (min-width: #{map-get($breakpoints, $device)}) {
+    @content;
+  }
+}
+
+// nesting and interpolation
+.recipe-card {
+  @include card-style();
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: #{$card-border-radius} #{$card-border-radius} 0 0;
+  }
+
+  h2,
+  h3 {
+    margin: 10px;
+    text-align: center;
+  }
+
+  @include responsive("tablet") {
+    max-width: 300px;
+  }
+}

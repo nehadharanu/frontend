@@ -1,0 +1,88 @@
+@import "variables";
+@import "mixins";
+@import "placeholder";
+@import "functions";
+@import "grid/grid-layouts";
+@import "flex/flex-layouts";
+@import "components/cards.scss";
+@import "components/header.scss";
+body {
+  font-family: $font-family;
+  background-image: url("images/reciepebackground.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: $primary-color;
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+body {
+  background-image: url("file:///E:/a66/images/reciepebackground.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.recipe-page {
+  background-image: url("file:///E:/a66/images/bg.png");
+}
+.ingredients,
+.directions {
+  background-color: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ingredients:hover,
+.directions:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+ol,
+p {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ingredients ol li,
+.directions p {
+  font-size: 18px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.ingredients ol {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.ingredients ol li {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.ingredients ol li:hover,
+.directions p:hover {
+  color: #ff6347;
+}

@@ -1,0 +1,11 @@
+header,
+footer {
+  width: 100vw; // Full viewport width
+  margin: 0; 
+  padding: 20px;
+  background-color: $primary-color;
+  color: $secondary-color;
+  text-align: center;
+  position: relative;
+  box-sizing: border-box; // Ensures padding doesn't add extra width
+}

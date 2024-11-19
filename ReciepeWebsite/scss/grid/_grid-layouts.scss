@@ -1,0 +1,13 @@
+.recipe-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3-column grid layout
+  gap: 40px;
+  padding: 40px;
+}
+
+.page-container {
+  display: grid;
+  grid-template-rows: auto 1fr auto; // Header, content, footer
+  min-height: 100vh;
+  gap: 20px;
+}
